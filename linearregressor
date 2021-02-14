@@ -9,13 +9,15 @@ classifier = SVC(kernel = 'linear')
 
 normal_data = np.genfromtxt('/samp_latest_nor.csv',delimiter=',')
 attack_data = np.genfromtxt('/test_samp_4.csv',delimiter=',')
+
 '''print(normal_data.shape)
 print(attack_data.shape)
 print(int(normal_data.size/2))
 print(attack_data)'''
-attack_data = attack_data[64:,:]
+
 normal_class = np.zeros(int(normal_data.size/2))
 attack_class = np.ones(int(attack_data.size/2))
+
 '''print("\n")
 print(normal_class.shape)
 print(attack_class.shape)
@@ -23,9 +25,9 @@ print("\n")'''
 
 X = np.append(normal_data,attack_data,axis=0)
 Y = np.append(normal_class,attack_class,axis=0)
-X = X[:3000,:3]
+#X = X[:3000,:3]
 print(X.shape)
-Y = Y[:3000]
+#Y = Y[:3000]
 print(Y.shape)
 '''print(X.shape)
 print(Y.shape)'''
